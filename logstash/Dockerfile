@@ -13,7 +13,7 @@ EXPOSE 8080 5000
 
 RUN \
   rpm --rebuilddb && yum clean all && \
-  yum install -y tar java-1.8.0-openjdk openssl && \
+  yum install -y tar java-1.8.0-openjdk openssl telnet && \
   cd /opt/app-root && \
   curl -O https://download.elasticsearch.org/logstash/logstash/logstash-${LOGSTASH_VERSION}.tar.gz && \
   tar zxvf logstash-${LOGSTASH_VERSION}.tar.gz -C /opt/app-root --strip-components=1 && \

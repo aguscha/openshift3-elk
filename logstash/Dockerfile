@@ -9,6 +9,7 @@ LABEL io.k8s.description="Logstash" \
       io.k8s.display-name="logstash ${LOGSTASH_VERSION}" \
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="logstash,${LOGSTASH_VERSION},elk"
+EXPOSE 8080 5000
 
 RUN \
   rpm --rebuilddb && yum clean all && \

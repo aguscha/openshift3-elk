@@ -13,14 +13,12 @@ EXPOSE 8080 5000
 
 RUN \
   rpm --rebuilddb && yum clean all && \
-  yum install -y tar java-1.8.0-openjdk openssl telnet && \
+  yum install -y tar java-1.8.0-openjdk openssl && \
   cd /opt/app-root && \
   curl -O https://download.elasticsearch.org/logstash/logstash/logstash-${LOGSTASH_VERSION}.tar.gz && \
   tar zxvf logstash-${LOGSTASH_VERSION}.tar.gz -C /opt/app-root --strip-components=1 && \
   rm -f logstash-${LOGSTASH_VERSION}.tar.gz && \
   yum clean all -y
-
-RUN yum install -y telnet
 
 # Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image sets io.openshift.s2i.scripts-url label that way, or update that label
 COPY ./.s2i/bin/ /usr/libexec/s2i

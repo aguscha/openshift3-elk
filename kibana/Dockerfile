@@ -23,6 +23,8 @@ RUN set -x \
 	&& chown -R kibana:kibana /opt/kibana \
 	&& rm -rf /var/lib/apt/lists/*
 
+COPY logo-salute1.svg /opt/kibana/src/ui/public/images/
+
 ENV PATH /opt/kibana/bin:$PATH
 
 COPY docker-entrypoint.sh /

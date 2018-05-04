@@ -23,7 +23,8 @@ RUN set -x \
 	&& chown -R kibana:kibana /opt/kibana \
 	&& rm -rf /var/lib/apt/lists/*
 
-COPY logo-salute1.svg /opt/kibana/src/ui/public/images/
+RUN rm -rf /opt/kibana/src/ui/public/images/kibana.svg
+COPY logo-salute1.svg /opt/kibana/src/ui/public/images/kibana.svg
 
 ENV PATH /opt/kibana/bin:$PATH
 

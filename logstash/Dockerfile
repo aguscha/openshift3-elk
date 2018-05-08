@@ -2,7 +2,7 @@ FROM openshift/base-centos7
 
 MAINTAINER Lorenz Bischof <bischof@puzzle.ch>
 
-ENV LOGSTASH_VERSION=2.3.0 \
+ENV LOGSTASH_VERSION=2.3.3 \
     ELASTICSEARCH_SERVICE_HOST=elasticsearch
 
 LABEL io.k8s.description="Logstash" \

@@ -24,7 +24,7 @@ RUN set -x \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Uncomment the following line out to change the top left icon to the solute logo.
-COPY logo-salute1.svg /opt/kibana/optimize/bundles/src/ui/public/images/kibana.svg
+# COPY logo-salute1.svg /opt/kibana/optimize/bundles/src/ui/public/images/kibana.svg
 
 ENV PATH /opt/kibana/bin:$PATH
 

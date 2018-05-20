@@ -6,7 +6,7 @@ RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 46095ACC85485
 
 ENV ELASTICSEARCH_MAJOR 6.2
 ENV ELASTICSEARCH_VERSION 6.2.4
-ENV ELASTICSEARCH_REPO_BASE http://packages.elasticsearch.org/elasticsearch/2.x/debian
+ENV ELASTICSEARCH_REPO_BASE https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.x/debian
 
 RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > /etc/apt/sources.list.d/elasticsearch.list
 

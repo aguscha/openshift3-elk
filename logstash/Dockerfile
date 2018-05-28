@@ -8,6 +8,8 @@ LABEL io.k8s.description="Logstash" \
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="logstash,${LOGSTASH_VERSION},elk"
 
+EXPOSE 8080 5000
+
 RUN \
   rpm --rebuilddb && yum clean all && \
   yum install -y tar java-1.8.0-openjdk openssl && \
@@ -22,6 +24,9 @@ COPY ./.s2i/bin/ /usr/libexec/s2i
 
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 RUN chown -R 1001:1001 /opt/app-root
+
+# Make data directory writable
+RUN chmod 777 -R /opt/app-root/data
 
 # This default user is created in the openshift/base-centos7 image
 USER 1001
